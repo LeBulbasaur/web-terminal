@@ -11,14 +11,16 @@ function Input() {
         e.preventDefault();
         console.log(inputRef.current.value);
         setInput("");
-      } else {
-        e.target.style.height = "auto";
-        e.target.style.height = e.target.scrollHeight - 3 + "px";
       }
     };
-
+    inputRef.current.style.height = "auto";
+    inputRef.current.style.height = inputRef.current.scrollHeight + "px";
     inputRef.current?.addEventListener("keydown", handleKeyDown);
+    const handleClick = () => {
+      inputRef.current?.focus();
+    };
 
+    document.addEventListener("click", handleClick);
     return () => {
       inputRef.current?.removeEventListener("keydown", handleKeyDown);
     };
