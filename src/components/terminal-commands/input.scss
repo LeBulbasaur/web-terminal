@@ -5,19 +5,6 @@
   gap: 0.5rem;
 }
 
-.input__prefix {
-  white-space: nowrap;
-  font-weight: bold;
-}
-
-.input__prefix__tilde {
-  color: var(--gruvbox-aqua);
-}
-
-.input__prefix__mark {
-  color: var(--gruvbox-green);
-}
-
 .input__container textarea {
   border: none;
   outline: none;

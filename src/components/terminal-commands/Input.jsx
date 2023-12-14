@@ -1,25 +1,46 @@
 import "./input.scss";
-import { useState, useRef, useEffect } from "react";
+import { MessageContext } from "../../context/context";
+import { useState, useRef, useEffect, useContext } from "react";
 
 function Input() {
   const [input, setInput] = useState("");
+  const { dispatch } = useContext(MessageContext);
   const inputRef = useRef(null);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Enter") {
         e.preventDefault();
+
+        // save command to history
         console.log(inputRef.current.value);
+        dispatch({
+          type: "ADD_TO_HISTORY",
+          payload: {
+            text: inputRef.current.value,
+            type: "output",
+            origin: "user",
+          },
+        });
+
+        // clear input
         setInput("");
       }
     };
+    // reset height of input
     inputRef.current.style.height = "auto";
+
+    // set height of input to match height of text
     inputRef.current.style.height = inputRef.current.scrollHeight + "px";
+
+    // add event listener for keys
     inputRef.current?.addEventListener("keydown", handleKeyDown);
+
+    // define handleClick function which focuses on input
     const handleClick = () => {
       inputRef.current?.focus();
     };
-
+    // add click event listener to document so that it always focuses on input
     document.addEventListener("click", handleClick);
     return () => {
       inputRef.current?.removeEventListener("keydown", handleKeyDown);
@@ -29,9 +50,9 @@ function Input() {
   return (
     <div className="input__container">
       <div className="input__text">
-        <span className="input__prefix">
-          <span className="input__prefix__tilde">~ </span>
-          <span className="input__prefix__mark">&gt;</span>
+        <span className="message__prefix">
+          <span className="message__prefix__tilde">~ </span>
+          <span className="message__prefix__mark">&gt;</span>
         </span>
       </div>
       <textarea
