@@ -10,11 +10,11 @@
   outline: none;
   background-color: transparent;
   color: var(--gruvbox-fg);
+  font-family: var(--main-font);
   font-size: 1rem;
-  font-family: monospace;
   min-height: 20px;
   width: 100%;
-  height: auto;
+  padding: 0;
   resize: none;
   overflow: hidden;
   word-break: break-all;

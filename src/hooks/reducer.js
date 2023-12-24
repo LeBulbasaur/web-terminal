@@ -23,4 +23,5 @@ export const initialState = {
       origin: "system",
     },
   ],
+  messages: [],
 };
