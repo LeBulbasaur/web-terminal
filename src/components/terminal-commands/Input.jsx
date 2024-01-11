@@ -13,15 +13,20 @@ function Input() {
         e.preventDefault();
 
         // save command to history
-        console.log(inputRef.current.value);
-        dispatch({
-          type: "ADD_TO_HISTORY",
-          payload: {
-            text: inputRef.current.value,
-            type: "output",
-            origin: "user",
-          },
-        });
+        if (inputRef.current.value === "clear") {
+          dispatch({
+            type: "CLEAR_HISTORY",
+          });
+        } else {
+          dispatch({
+            type: "ADD_TO_HISTORY",
+            payload: {
+              text: inputRef.current.value,
+              type: "output",
+              origin: "user",
+            },
+          });
+        }
 
         // clear input
         setInput("");

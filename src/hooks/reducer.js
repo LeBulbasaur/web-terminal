@@ -1,9 +1,16 @@
 export function reducer(state, action) {
   switch (action.type) {
     case "ADD_TO_HISTORY": {
+      console.log("xd");
       return {
         ...state,
         history: [...state.history, action.payload],
+      };
+    }
+    case "CLEAR_HISTORY": {
+      return {
+        ...state,
+        history: [],
       };
     }
   }
