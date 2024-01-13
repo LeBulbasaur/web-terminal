@@ -37,14 +37,15 @@ function Input() {
             })
               .then((res) => res.json())
               .then((data) => {
-                console.log(data);
-                dispatch({
-                  type: "ADD_TO_HISTORY",
-                  payload: {
-                    text: inputRef.current.value,
-                    type: "output",
-                    origin: "server",
-                  },
+                data.forEach((element) => {
+                  dispatch({
+                    type: "ADD_TO_HISTORY",
+                    payload: {
+                      text: element.name,
+                      type: "output",
+                      origin: "server",
+                    },
+                  });
                 });
               })
               .catch((err) => {
