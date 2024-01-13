@@ -3,3 +3,7 @@
   word-break: break-all;
   gap: 0.5rem;
 }
+
+.message__error {
+  color: var(--gruvbox-red);
+}

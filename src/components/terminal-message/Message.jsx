@@ -12,9 +12,7 @@ function Message({ message }) {
           <span className="message__prefix__mark">&gt;</span>
         </div>
       ) : null}
-      <div className={`message_${type}`}>
-        <span className="message__input__text">{text}</span>
-      </div>
+      <span className={`message__${type}`}>{text}</span>
     </div>
   );
 }

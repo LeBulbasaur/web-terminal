@@ -8,24 +8,67 @@ function Input() {
   const inputRef = useRef(null);
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKeyDown = async (e) => {
       if (e.key === "Enter") {
         e.preventDefault();
 
         // save command to history
-        if (inputRef.current.value === "clear") {
-          dispatch({
-            type: "CLEAR_HISTORY",
-          });
-        } else {
-          dispatch({
-            type: "ADD_TO_HISTORY",
-            payload: {
-              text: inputRef.current.value,
-              type: "output",
-              origin: "user",
-            },
-          });
+        switch (inputRef.current.value) {
+          case "clear":
+            dispatch({
+              type: "CLEAR_HISTORY",
+            });
+            break;
+          case "ls":
+            dispatch({
+              type: "ADD_TO_HISTORY",
+              payload: {
+                text: inputRef.current.value,
+                type: "output",
+                origin: "user",
+              },
+            });
+
+            await fetch("http://localhost:5277/systemobject", {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                console.log(data);
+                dispatch({
+                  type: "ADD_TO_HISTORY",
+                  payload: {
+                    text: inputRef.current.value,
+                    type: "output",
+                    origin: "server",
+                  },
+                });
+              })
+              .catch((err) => {
+                console.log(err);
+                dispatch({
+                  type: "ADD_TO_HISTORY",
+                  payload: {
+                    text: `${err}!`,
+                    type: "error",
+                    origin: "server",
+                  },
+                });
+              });
+            break;
+          default:
+            dispatch({
+              type: "ADD_TO_HISTORY",
+              payload: {
+                text: inputRef.current.value,
+                type: "output",
+                origin: "user",
+              },
+            });
+            break;
         }
 
         // clear input
