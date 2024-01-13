@@ -1,6 +1,8 @@
 import "./input.scss";
 import { MessageContext } from "../../context/context";
 import { useState, useRef, useEffect, useContext } from "react";
+import HandleLS from "../../methods/HandleLS";
+import HandleUndefined from "../../methods/HandleUndefined";
 
 function Input() {
   const [input, setInput] = useState("");
@@ -12,7 +14,7 @@ function Input() {
       if (e.key === "Enter") {
         e.preventDefault();
 
-        // save command to history
+        // save command to history based on input
         switch (inputRef.current.value) {
           case "clear":
             dispatch({
@@ -20,55 +22,10 @@ function Input() {
             });
             break;
           case "ls":
-            dispatch({
-              type: "ADD_TO_HISTORY",
-              payload: {
-                text: inputRef.current.value,
-                type: "output",
-                origin: "user",
-              },
-            });
-
-            await fetch("http://localhost:5277/systemobject", {
-              method: "GET",
-              headers: {
-                "Content-Type": "application/json",
-              },
-            })
-              .then((res) => res.json())
-              .then((data) => {
-                data.forEach((element) => {
-                  dispatch({
-                    type: "ADD_TO_HISTORY",
-                    payload: {
-                      text: element.name,
-                      type: "output",
-                      origin: "server",
-                    },
-                  });
-                });
-              })
-              .catch((err) => {
-                console.log(err);
-                dispatch({
-                  type: "ADD_TO_HISTORY",
-                  payload: {
-                    text: `${err}!`,
-                    type: "error",
-                    origin: "server",
-                  },
-                });
-              });
+            HandleLS(inputRef.current.value, dispatch);
             break;
           default:
-            dispatch({
-              type: "ADD_TO_HISTORY",
-              payload: {
-                text: inputRef.current.value,
-                type: "output",
-                origin: "user",
-              },
-            });
+            HandleUndefined(inputRef.current.value, dispatch);
             break;
         }
 
