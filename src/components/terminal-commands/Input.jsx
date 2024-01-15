@@ -17,6 +17,10 @@ function Input() {
 
   useEffect(() => {
     inputRef.current?.focus();
+    async function init() {
+      await HandleSetFiles(dispatch);
+    }
+    init();
   }, []);
 
   useEffect(() => {
