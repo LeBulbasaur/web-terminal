@@ -1,0 +1,131 @@
+import HandleSetFiles from "./HandleSetFiles";
+
+export function HandleNANO(message, dispatch) {
+  if (message.split(" ").length > 2) {
+    dispatch({
+      type: "ADD_TO_HISTORY",
+      payload: {
+        text: "Invalid command syntax: too many arguments",
+        type: "error",
+        origin: "server",
+      },
+    });
+    return;
+  }
+  dispatch({
+    type: "ADD_TO_HISTORY",
+    payload: {
+      text: message,
+      type: "standard",
+      origin: "user",
+    },
+  });
+  dispatch({
+    type: "SET_NANO_MODE",
+    payload: true,
+  });
+}
+
+export async function HandleNANOInitial(state, dispatch) {
+  const fileName = state.commands[state.commands.length - 1].text.split(" ")[1];
+
+  const file = state.files.find(
+    (file) =>
+      file.name === fileName &&
+      file.type === "txt" &&
+      file.parentId === state.currentDirectory
+  );
+
+  let message = "";
+
+  if (!file) {
+    return message;
+  }
+
+  await fetch(`http://localhost:5277/systemobject/${file.id}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      message = data.content;
+    })
+    .catch((err) => {
+      console.log(err);
+      dispatch({
+        type: "ADD_TO_HISTORY",
+        payload: {
+          text: `${err}`,
+          type: "error",
+          origin: "server",
+        },
+      });
+      dispatch({
+        type: "SET_NANO_MODE",
+        payload: false,
+      });
+    });
+  return message;
+}
+
+export async function HandleNANOChange(message, state, dispatch, savedRef) {
+  const fileName = state.commands[state.commands.length - 1].text.split(" ")[1];
+
+  const file = state.files.find(
+    (file) =>
+      file.name === fileName &&
+      file.type === "txt" &&
+      file.parentId === state.currentDirectory
+  );
+
+  if (!file) {
+    await fetch("http://localhost:5277/systemobject/posttxt", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: fileName,
+        parentId: state.currentDirectory,
+        type: "txt",
+        content: message,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        savedRef.current.style.display = "block";
+        HandleSetFiles(dispatch);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    return;
+  }
+
+  await fetch(`http://localhost:5277/systemobject/puttxt/${file.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      id: file.id,
+      name: file.name,
+      type: file.type,
+      parentId: file.parentId,
+      content: message,
+    }),
+  })
+    .then((res) => res.text())
+    .then((text) => (text ? JSON.parse(text) : {}))
+    .then((data) => {
+      console.log("updated");
+      savedRef.current.style.display = "block";
+      HandleSetFiles(dispatch);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}

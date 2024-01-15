@@ -1,41 +1,46 @@
-export default async function HandleLS(message, dispatch) {
+export default function HandleLS(message, state, dispatch) {
   dispatch({
     type: "ADD_TO_HISTORY",
     payload: {
       text: message,
-      type: "output",
+      type: "standard",
       origin: "user",
     },
   });
 
-  await fetch("http://localhost:5277/systemobject", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      data.forEach((element) => {
+  if (message.split(" ").length === 2) {
+    dispatch({
+      type: "ADD_TO_HISTORY",
+      payload: {
+        text: "Invalid command syntax: too many arguments",
+        type: "error",
+        origin: "server",
+      },
+    });
+    return;
+  }
+
+  state.files.forEach((element) => {
+    if (element.parentId === state.currentDirectory) {
+      if (element.type === "dir") {
+        dispatch({
+          type: "ADD_TO_HISTORY",
+          payload: {
+            text: element.name + "/",
+            type: "blue",
+            origin: "server",
+          },
+        });
+      } else {
         dispatch({
           type: "ADD_TO_HISTORY",
           payload: {
             text: element.name,
-            type: "output",
+            type: "standard",
             origin: "server",
           },
         });
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-      dispatch({
-        type: "ADD_TO_HISTORY",
-        payload: {
-          text: `${err}`,
-          type: "error",
-          origin: "server",
-        },
-      });
-    });
+      }
+    }
+  });
 }

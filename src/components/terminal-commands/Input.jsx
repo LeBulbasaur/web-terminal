@@ -1,28 +1,63 @@
 import "./input.scss";
 import { MessageContext } from "../../context/context";
 import { useState, useRef, useEffect, useContext } from "react";
+import HandleSetFiles from "../../methods/HandleSetFiles";
+import HandleCLEAR from "../../methods/HandleCLEAR";
 import HandleLS from "../../methods/HandleLS";
 import HandleUndefined from "../../methods/HandleUndefined";
+import HandleCD from "../../methods/HandleCD";
+import { HandleMKDIR, HandleRMDIR } from "../../methods/HandleDIR";
+import { HandleTOUCH, HandleRM, HandleCAT } from "../../methods/HandleTXT";
+import { HandleNANO } from "../../methods/HandleNANO";
 
 function Input() {
   const [input, setInput] = useState("");
-  const { dispatch } = useContext(MessageContext);
+  const { state, dispatch } = useContext(MessageContext);
   const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = async (e) => {
       if (e.key === "Enter") {
         e.preventDefault();
+        dispatch({
+          type: "ADD_COMMAND",
+          payload: { text: input },
+        });
+
+        await HandleSetFiles(dispatch);
 
         // save command to history based on input
-        switch (inputRef.current.value) {
+        switch (inputRef.current.value.split(" ")[0]) {
           case "clear":
-            dispatch({
-              type: "CLEAR_HISTORY",
-            });
+            HandleCLEAR(inputRef.current.value, dispatch);
             break;
           case "ls":
-            HandleLS(inputRef.current.value, dispatch);
+            HandleLS(inputRef.current.value, state, dispatch);
+            break;
+          case "cd":
+            HandleCD(inputRef.current.value, state, dispatch);
+            break;
+          case "mkdir":
+            HandleMKDIR(inputRef.current.value, state, dispatch);
+            break;
+          case "rmdir":
+            HandleRMDIR(inputRef.current.value, state, dispatch);
+            break;
+          case "touch":
+            HandleTOUCH(inputRef.current.value, state, dispatch);
+            break;
+          case "rm":
+            HandleRM(inputRef.current.value, state, dispatch);
+            break;
+          case "cat":
+            HandleCAT(inputRef.current.value, state, dispatch);
+            break;
+          case "nano":
+            HandleNANO(inputRef.current.value, dispatch);
             break;
           default:
             HandleUndefined(inputRef.current.value, dispatch);
@@ -30,6 +65,20 @@ function Input() {
         }
 
         // clear input
+        setInput("");
+
+        // TODO: upgrade command history system
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+
+        // get previous command
+        if (state.commands.length === 0) return;
+        const previousCommand = state.commands[state.commands.length - 1];
+        setInput(previousCommand.text);
+      } else if (e.key === "ArrowDown") {
+        e.preventDefault();
+
+        // get next command
         setInput("");
       }
     };
@@ -41,6 +90,9 @@ function Input() {
 
     // add event listener for keys
     inputRef.current?.addEventListener("keydown", handleKeyDown);
+
+    // scroll to bottom of input
+    inputRef.current?.scrollIntoView({ behavior: "smooth" });
 
     // define handleClick function which focuses on input
     const handleClick = () => {

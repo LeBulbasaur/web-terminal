@@ -3,7 +3,7 @@ export default function HandleUndefined(message, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: message,
-      type: "output",
+      type: "standard",
       origin: "user",
     },
   });

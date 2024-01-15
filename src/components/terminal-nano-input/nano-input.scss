@@ -1,0 +1,61 @@
+.nano__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  height: 100%;
+}
+
+.nano__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  width: 100%;
+  background-color: var(--gruvbox-fg);
+  color: var(--gruvbox-bg);
+}
+
+.nano__input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--gruvbox-fg);
+  font-family: var(--main-font);
+  font-size: 1rem;
+  padding: 0;
+  resize: none;
+  overflow: hidden;
+  word-break: break-all;
+  width: 100%;
+  height: 100%;
+}
+
+.nano__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.nano__footer__top {
+  background-color: var(--gruvbox-fg);
+  color: var(--gruvbox-bg);
+  display: none;
+}
+
+.nano__footer__bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.nano__footer__shortcut {
+  background-color: var(--gruvbox-fg);
+  color: var(--gruvbox-bg);
+}
