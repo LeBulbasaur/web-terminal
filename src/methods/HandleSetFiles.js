@@ -17,8 +17,8 @@ export default async function HandleSetFiles(dispatch) {
       dispatch({
         type: "ADD_TO_HISTORY",
         payload: {
-          text: `${err}`,
-          type: "Error connecting to server, please try again",
+          text: `Error connecting to server, please try again`,
+          type: "error",
           origin: "server",
         },
       });

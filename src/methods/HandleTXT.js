@@ -22,6 +22,29 @@ export async function HandleTOUCH(message, state, dispatch) {
     return;
   }
 
+  let exists = false;
+  state.files.forEach((element) => {
+    if (
+      element.name === message.split(" ")[1] &&
+      element.parentId === state.currentDirectory &&
+      element.type === "txt"
+    ) {
+      dispatch({
+        type: "ADD_TO_HISTORY",
+        payload: {
+          text: "File already exists",
+          type: "error",
+          origin: "server",
+        },
+      });
+      exists = true;
+    }
+  });
+
+  if (exists) {
+    return;
+  }
+
   fetch("http://localhost:5277/systemobject/posttxt", {
     method: "POST",
     headers: {

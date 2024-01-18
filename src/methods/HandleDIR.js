@@ -27,7 +27,8 @@ export async function HandleMKDIR(message, state, dispatch) {
   state.files.forEach((element) => {
     if (
       element.name === message.split(" ")[1] &&
-      element.parentId === state.currentDirectory
+      element.parentId === state.currentDirectory &&
+      element.type === "dir"
     ) {
       exists = true;
     }

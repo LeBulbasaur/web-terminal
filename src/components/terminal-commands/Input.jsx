@@ -2,10 +2,12 @@ import "./input.scss";
 import { MessageContext } from "../../context/context";
 import { useState, useRef, useEffect, useContext } from "react";
 import HandleSetFiles from "../../methods/HandleSetFiles";
+import HandleHELP from "../../methods/HandleHELP";
 import HandleCLEAR from "../../methods/HandleCLEAR";
 import HandleLS from "../../methods/HandleLS";
 import HandleUndefined from "../../methods/HandleUndefined";
 import HandleCD from "../../methods/HandleCD";
+import HandleMV from "../../methods/HandleMV";
 import { HandleMKDIR, HandleRMDIR } from "../../methods/HandleDIR";
 import { HandleTOUCH, HandleRM, HandleCAT } from "../../methods/HandleTXT";
 import { HandleNANO } from "../../methods/HandleNANO";
@@ -39,6 +41,9 @@ function Input() {
           case "clear":
             HandleCLEAR(inputRef.current.value, dispatch);
             break;
+          case "help":
+            HandleHELP(dispatch);
+            break;
           case "ls":
             HandleLS(inputRef.current.value, state, dispatch);
             break;
@@ -62,6 +67,9 @@ function Input() {
             break;
           case "nano":
             HandleNANO(inputRef.current.value, dispatch);
+            break;
+          case "mv":
+            HandleMV(inputRef.current.value, state, dispatch);
             break;
           default:
             HandleUndefined(inputRef.current.value, dispatch);
