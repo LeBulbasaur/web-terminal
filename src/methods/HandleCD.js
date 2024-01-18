@@ -1,3 +1,5 @@
+import GetPath from "./GetPath";
+
 export default function HandleCD(message, state, dispatch) {
   dispatch({
     type: "ADD_TO_HISTORY",
@@ -5,6 +7,7 @@ export default function HandleCD(message, state, dispatch) {
       text: message,
       type: "standard",
       origin: "user",
+      path: GetPath(state),
     },
   });
   if (message.split(" ").length > 2) {
@@ -14,6 +17,7 @@ export default function HandleCD(message, state, dispatch) {
         text: "Invalid command syntax: too many arguments",
         type: "error",
         origin: "server",
+        path: GetPath(state),
       },
     });
     return;
@@ -24,6 +28,7 @@ export default function HandleCD(message, state, dispatch) {
         text: "Invalid command syntax: missing path",
         type: "error",
         origin: "server",
+        path: GetPath(state),
       },
     });
     return;
@@ -75,6 +80,7 @@ export default function HandleCD(message, state, dispatch) {
       type: "SET_PATH",
       payload: tempDirectory,
     });
+    return;
   } else {
     dispatch({
       type: "ADD_TO_HISTORY",
@@ -82,7 +88,9 @@ export default function HandleCD(message, state, dispatch) {
         text: "The directory does not exist",
         type: "error",
         origin: "server",
+        path: GetPath(state),
       },
     });
+    return;
   }
 }

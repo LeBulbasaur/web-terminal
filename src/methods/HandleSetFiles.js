@@ -1,3 +1,5 @@
+import GetPath from "./GetPath";
+
 export default async function HandleSetFiles(dispatch) {
   await fetch("http://localhost:5277/systemobject", {
     method: "GET",
@@ -20,6 +22,7 @@ export default async function HandleSetFiles(dispatch) {
           text: `Error connecting to server, please try again`,
           type: "error",
           origin: "server",
+          path: GetPath(state),
         },
       });
     });

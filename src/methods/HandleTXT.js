@@ -1,4 +1,5 @@
 import HandleSetFiles from "./HandleSetFiles";
+import GetPath from "./GetPath";
 
 export async function HandleTOUCH(message, state, dispatch) {
   dispatch({
@@ -7,6 +8,7 @@ export async function HandleTOUCH(message, state, dispatch) {
       text: message,
       type: "standard",
       origin: "user",
+      path: GetPath(state),
     },
   });
 
@@ -17,6 +19,7 @@ export async function HandleTOUCH(message, state, dispatch) {
         text: "Invalid command syntax: too many arguments",
         type: "error",
         origin: "server",
+        path: GetPath(state),
       },
     });
     return;
@@ -35,6 +38,7 @@ export async function HandleTOUCH(message, state, dispatch) {
           text: "File already exists",
           type: "error",
           origin: "server",
+          path: GetPath(state),
         },
       });
       exists = true;
@@ -70,6 +74,7 @@ export async function HandleTOUCH(message, state, dispatch) {
           text: `${err}`,
           type: "error",
           origin: "server",
+          path: GetPath(state),
         },
       });
     });
@@ -82,6 +87,7 @@ export async function HandleRM(message, state, dispatch) {
       text: message,
       type: "standard",
       origin: "user",
+      path: GetPath(state),
     },
   });
 
@@ -92,6 +98,7 @@ export async function HandleRM(message, state, dispatch) {
         text: "Invalid command syntax: too many arguments",
         type: "error",
         origin: "server",
+        path: GetPath(state),
       },
     });
     return;
@@ -116,6 +123,7 @@ export async function HandleRM(message, state, dispatch) {
         text: "File not found",
         type: "error",
         origin: "server",
+        path: GetPath(state),
       },
     });
     return;
@@ -138,6 +146,7 @@ export async function HandleRM(message, state, dispatch) {
           text: `${err}`,
           type: "error",
           origin: "server",
+          path: GetPath(state),
         },
       });
     });
@@ -150,6 +159,7 @@ export async function HandleCAT(message, state, dispatch) {
       text: message,
       type: "standard",
       origin: "user",
+      path: GetPath(state),
     },
   });
 
@@ -160,6 +170,7 @@ export async function HandleCAT(message, state, dispatch) {
         text: "Invalid command syntax: too many arguments",
         type: "error",
         origin: "server",
+        path: GetPath(state),
       },
     });
     return;
@@ -184,6 +195,7 @@ export async function HandleCAT(message, state, dispatch) {
         text: "File not found",
         type: "error",
         origin: "server",
+        path: GetPath(state),
       },
     });
     return;
@@ -203,6 +215,7 @@ export async function HandleCAT(message, state, dispatch) {
           text: data.content,
           type: "standard",
           origin: "server",
+          path: GetPath(state),
         },
       });
     })
@@ -214,6 +227,7 @@ export async function HandleCAT(message, state, dispatch) {
           text: `${err}`,
           type: "error",
           origin: "server",
+          path: GetPath(state),
         },
       });
     });

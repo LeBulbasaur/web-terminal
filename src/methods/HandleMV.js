@@ -1,4 +1,5 @@
 import HandleSetFiles from "./HandleSetFiles";
+import GetPath from "./GetPath";
 
 export default async function HandleMV(message, state, dispatch) {
   dispatch({
@@ -7,6 +8,7 @@ export default async function HandleMV(message, state, dispatch) {
       text: message,
       type: "standard",
       origin: "user",
+      path: GetPath(state),
     },
   });
 
@@ -17,6 +19,7 @@ export default async function HandleMV(message, state, dispatch) {
         text: "Invalid command syntax: wrong number of arguments",
         type: "error",
         origin: "server",
+        path: GetPath(state),
       },
     });
     return;
@@ -46,6 +49,7 @@ export default async function HandleMV(message, state, dispatch) {
         text: "File not found",
         type: "error",
         origin: "server",
+        path: GetPath(state),
       },
     });
     return;
@@ -85,6 +89,7 @@ export default async function HandleMV(message, state, dispatch) {
         text: "The directory does not exist",
         type: "error",
         origin: "server",
+        path: GetPath(state),
       },
     });
     return;

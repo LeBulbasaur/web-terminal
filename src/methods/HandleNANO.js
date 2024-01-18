@@ -1,4 +1,5 @@
 import HandleSetFiles from "./HandleSetFiles";
+import GetPath from "./GetPath";
 
 export function HandleNANO(message, dispatch) {
   if (message.split(" ").length > 2) {
@@ -8,6 +9,7 @@ export function HandleNANO(message, dispatch) {
         text: "Invalid command syntax: too many arguments",
         type: "error",
         origin: "server",
+        path: GetPath(state),
       },
     });
     return;
@@ -18,6 +20,7 @@ export function HandleNANO(message, dispatch) {
       text: message,
       type: "standard",
       origin: "user",
+      path: GetPath(state),
     },
   });
   dispatch({
@@ -60,6 +63,7 @@ export async function HandleNANOInitial(state, dispatch) {
           text: `${err}`,
           type: "error",
           origin: "server",
+          path: GetPath(state),
         },
       });
       dispatch({

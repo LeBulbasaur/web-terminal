@@ -1,3 +1,5 @@
+import GetPath from "./GetPath";
+
 export default function HandleLS(message, state, dispatch) {
   dispatch({
     type: "ADD_TO_HISTORY",
@@ -5,6 +7,7 @@ export default function HandleLS(message, state, dispatch) {
       text: message,
       type: "standard",
       origin: "user",
+      path: GetPath(state),
     },
   });
 
@@ -15,6 +18,7 @@ export default function HandleLS(message, state, dispatch) {
         text: "Invalid command syntax: too many arguments",
         type: "error",
         origin: "server",
+        path: GetPath(state),
       },
     });
     return;
@@ -29,6 +33,7 @@ export default function HandleLS(message, state, dispatch) {
             text: element.name + "/",
             type: "blue",
             origin: "server",
+            path: GetPath(state),
           },
         });
       } else {
@@ -38,6 +43,7 @@ export default function HandleLS(message, state, dispatch) {
             text: element.name,
             type: "standard",
             origin: "server",
+            path: GetPath(state),
           },
         });
       }

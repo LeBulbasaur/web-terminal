@@ -1,3 +1,5 @@
+import GetPath from "./GetPath";
+
 export default function HandleUndefined(message, dispatch) {
   dispatch({
     type: "ADD_TO_HISTORY",
@@ -5,6 +7,7 @@ export default function HandleUndefined(message, dispatch) {
       text: message,
       type: "standard",
       origin: "user",
+      path: GetPath(state),
     },
   });
 
@@ -14,6 +17,7 @@ export default function HandleUndefined(message, dispatch) {
       text: "Unknown command: " + message,
       type: "error",
       origin: "server",
+      path: GetPath(state),
     },
   });
 }

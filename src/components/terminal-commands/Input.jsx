@@ -1,6 +1,9 @@
 import "./input.scss";
 import { MessageContext } from "../../context/context";
 import { useState, useRef, useEffect, useContext } from "react";
+import GetPath from "../../methods/GetPath";
+import Neofetch from "../../methods/Neofetch";
+import Projects from "../../methods/Projects";
 import HandleSetFiles from "../../methods/HandleSetFiles";
 import HandleHELP from "../../methods/HandleHELP";
 import HandleCLEAR from "../../methods/HandleCLEAR";
@@ -71,6 +74,12 @@ function Input() {
           case "mv":
             HandleMV(inputRef.current.value, state, dispatch);
             break;
+          case "neofetch":
+            Neofetch(state, dispatch);
+            break;
+          case "projects":
+            Projects(inputRef.current.value, state, dispatch);
+            break;
           default:
             HandleUndefined(inputRef.current.value, dispatch);
             break;
@@ -121,7 +130,7 @@ function Input() {
     <div className="input__container">
       <div className="input__text">
         <span className="message__prefix">
-          <span className="message__prefix__tilde">~ </span>
+          <span className="message__prefix__tilde">~{GetPath(state)} </span>
           <span className="message__prefix__mark">&gt;</span>
         </span>
       </div>

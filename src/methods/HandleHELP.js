@@ -1,3 +1,5 @@
+import GetPath from "./GetPath";
+
 export default function HandleHELP(dispatch) {
   dispatch({
     type: "ADD_TO_HISTORY",
@@ -5,6 +7,7 @@ export default function HandleHELP(dispatch) {
       text: "help",
       type: "standard",
       origin: "user",
+      path: GetPath(state),
     },
   });
   dispatch({
@@ -13,6 +16,7 @@ export default function HandleHELP(dispatch) {
       text: "Available commands:",
       type: "blue",
       origin: "server",
+      path: GetPath(state),
     },
   });
   dispatch({
@@ -21,6 +25,7 @@ export default function HandleHELP(dispatch) {
       text: "cd [path] - change working directory",
       type: "standard",
       origin: "server",
+      path: GetPath(state),
     },
   });
   dispatch({
@@ -29,6 +34,7 @@ export default function HandleHELP(dispatch) {
       text: "ls - list files in current directory",
       type: "standard",
       origin: "server",
+      path: GetPath(state),
     },
   });
   dispatch({
@@ -37,6 +43,7 @@ export default function HandleHELP(dispatch) {
       text: "clear - clear the terminal screen",
       type: "standard",
       origin: "server",
+      path: GetPath(state),
     },
   });
   dispatch({
@@ -45,6 +52,7 @@ export default function HandleHELP(dispatch) {
       text: "touch [file] - create a new file",
       type: "standard",
       origin: "server",
+      path: GetPath(state),
     },
   });
   dispatch({
@@ -53,6 +61,7 @@ export default function HandleHELP(dispatch) {
       text: "mkdir [directory] - create a new directory",
       type: "standard",
       origin: "server",
+      path: GetPath(state),
     },
   });
   dispatch({
@@ -61,6 +70,7 @@ export default function HandleHELP(dispatch) {
       text: "rm [file] - delete file",
       type: "standard",
       origin: "server",
+      path: GetPath(state),
     },
   });
   dispatch({
@@ -69,6 +79,7 @@ export default function HandleHELP(dispatch) {
       text: "rmdir [directory] - delete a directory",
       type: "standard",
       origin: "server",
+      path: GetPath(state),
     },
   });
   dispatch({
@@ -77,6 +88,7 @@ export default function HandleHELP(dispatch) {
       text: "cat [file] - read file",
       type: "standard",
       origin: "server",
+      path: GetPath(state),
     },
   });
   dispatch({
@@ -85,6 +97,7 @@ export default function HandleHELP(dispatch) {
       text: "nano [file] - edit existing or create new file",
       type: "standard",
       origin: "server",
+      path: GetPath(state),
     },
   });
 }

@@ -1,3 +1,5 @@
+import GetPath from "./GetPath";
+
 export default function HandleCLEAR(message, dispatch) {
   if (message.split(" ").length === 2) {
     dispatch({
@@ -6,6 +8,7 @@ export default function HandleCLEAR(message, dispatch) {
         text: message,
         type: "standard",
         origin: "user",
+        path: GetPath(state),
       },
     });
     dispatch({
@@ -14,6 +17,7 @@ export default function HandleCLEAR(message, dispatch) {
         text: "Invalid command syntax: too many arguments",
         type: "error",
         origin: "server",
+        path: GetPath(state),
       },
     });
     return;

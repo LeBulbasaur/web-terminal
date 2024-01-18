@@ -1,4 +1,5 @@
 import HandleSetFiles from "./HandleSetFiles";
+import GetPath from "./GetPath";
 
 export async function HandleMKDIR(message, state, dispatch) {
   dispatch({
@@ -7,6 +8,7 @@ export async function HandleMKDIR(message, state, dispatch) {
       text: message,
       type: "standard",
       origin: "user",
+      path: GetPath(state),
     },
   });
 
@@ -17,6 +19,7 @@ export async function HandleMKDIR(message, state, dispatch) {
         text: "Invalid command syntax: too many arguments",
         type: "error",
         origin: "server",
+        path: GetPath(state),
       },
     });
     return;
@@ -41,6 +44,7 @@ export async function HandleMKDIR(message, state, dispatch) {
         text: "File with same name already exists",
         type: "error",
         origin: "server",
+        path: GetPath(state),
       },
     });
     return;
@@ -70,6 +74,7 @@ export async function HandleMKDIR(message, state, dispatch) {
           text: `${err}`,
           type: "error",
           origin: "server",
+          path: GetPath(state),
         },
       });
     });
@@ -82,6 +87,7 @@ export async function HandleRMDIR(message, state, dispatch) {
       text: message,
       type: "standard",
       origin: "user",
+      path: GetPath(state),
     },
   });
 
@@ -92,6 +98,7 @@ export async function HandleRMDIR(message, state, dispatch) {
         text: "Invalid command syntax: too many arguments",
         type: "error",
         origin: "server",
+        path: GetPath(state),
       },
     });
     return;
@@ -116,6 +123,7 @@ export async function HandleRMDIR(message, state, dispatch) {
         text: "Directory not found",
         type: "error",
         origin: "server",
+        path: GetPath(state),
       },
     });
     return;
@@ -138,6 +146,7 @@ export async function HandleRMDIR(message, state, dispatch) {
           text: `${err}`,
           type: "error",
           origin: "server",
+          path: GetPath(state),
         },
       });
     });
