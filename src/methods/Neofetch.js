@@ -1,10 +1,10 @@
 import GetPath from "./GetPath";
 
-export default function Neofetch(state, dispatch) {
+export default function Neofetch(message, state, dispatch) {
   dispatch({
     type: "ADD_TO_HISTORY",
     payload: {
-      text: "neofetch",
+      text: message,
       type: "standard",
       origin: "user",
       path: GetPath(state),

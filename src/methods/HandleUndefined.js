@@ -1,6 +1,6 @@
 import GetPath from "./GetPath";
 
-export default function HandleUndefined(message, dispatch) {
+export default function HandleUndefined(message, state, dispatch) {
   dispatch({
     type: "ADD_TO_HISTORY",
     payload: {

@@ -45,7 +45,7 @@ function Input() {
             HandleCLEAR(inputRef.current.value, dispatch);
             break;
           case "help":
-            HandleHELP(dispatch);
+            HandleHELP(inputRef.current.value, state, dispatch);
             break;
           case "ls":
             HandleLS(inputRef.current.value, state, dispatch);
@@ -75,13 +75,13 @@ function Input() {
             HandleMV(inputRef.current.value, state, dispatch);
             break;
           case "neofetch":
-            Neofetch(state, dispatch);
+            Neofetch(inputRef.current.value, state, dispatch);
             break;
           case "projects":
             Projects(inputRef.current.value, state, dispatch);
             break;
           default:
-            HandleUndefined(inputRef.current.value, dispatch);
+            HandleUndefined(inputRef.current.value, state, dispatch);
             break;
         }
 

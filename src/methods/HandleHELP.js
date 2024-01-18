@@ -1,10 +1,10 @@
 import GetPath from "./GetPath";
 
-export default function HandleHELP(dispatch) {
+export default function HandleHELP(message, state, dispatch) {
   dispatch({
     type: "ADD_TO_HISTORY",
     payload: {
-      text: "help",
+      text: message,
       type: "standard",
       origin: "user",
       path: GetPath(state),
@@ -95,6 +95,15 @@ export default function HandleHELP(dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "nano [file] - edit existing or create new file",
+      type: "standard",
+      origin: "server",
+      path: GetPath(state),
+    },
+  });
+  dispatch({
+    type: "ADD_TO_HISTORY",
+    payload: {
+      text: "projects - get the list of the pinned projects from my github page",
       type: "standard",
       origin: "server",
       path: GetPath(state),
