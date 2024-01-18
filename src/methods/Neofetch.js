@@ -11,13 +11,12 @@ export default function Neofetch(state, dispatch) {
     },
   });
 
-  // "⠀⠀⡇⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⠸⠀⢰⡇⠀⠀⠀⠀\n⠀⢸⡃⠸⠿⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⡇⠀⠀⠈⡇⠀⠀⠀⠀\n⠀⢸⡇⠀⢻⠀⠀⠀⠘⠛⠀⠀⠉⠁⠀⠈⠟⠁⠀⠀⠀⡇⠀⡀⢠⡇⠀⠀⠀⠀\n⠀⣼⢹⠀⢸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⡇⠈⡇⠀⠀⠀⠀\n⠀⢹⣼⠇⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⡇⠐⡇⠀⠀⠀⠀\n⠀⢸⣿⡄⣸⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣗⠀⡇⠀⡇⠀⠀⠀⠀\n⠀⠀⢿⣧⣿⣿⠤⢤⠤⠤⡶⢶⣤⣔⣶⣶⣶⣶⢲⢶⠲⡏⠀⡇⢠⣿⠀⠀⠀⠀\n⠀⠀⠈⢻⣹⡎⡁⢸⠀⣆⣷⣼⣿⣿⣿⣿⠏⢹⣜⣼⢠⠃⠀⡇⠈⣻⡀⠀⠀⠀\n⠀⠀⠀⠀⡿⡇⢸⡈⣇⣿⣿⡿⠛⠟⠛⠁⠀⠸⢿⡿⣼⣀⡀⠁⠘⢿⡇⠀⠀⠀\n⠀⠀⠀⠀⣧⣡⣴⡟⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⣼⣧⣿⣿⣿⣿⣶⣾⣿⣀⠀⠀\n⠀⣠⣶⣿⣿⣟⣿⣿⣿⣿⣿⣿⣦⢖⣒⣒⡶⣴⣿⣿⣿⣻⣿⣿⣿⣿⣿⣿⣷⡀\n⢠⣿⣿⣿⣿⣿⣿⣿⡟⠳⣯⣻⣿⣿⣿⣿⣿⣿⢟⣵⠟⠉⣼⣿⣿⣿⣿⣿⣿⡇\n⠘⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠙⠮⣿⣿⣿⣿⡿⠋⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⠁\n⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣤⣀⡀⠈⠻⡿⠋⢀⣠⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⡆",
   // generate multiple dispatches on every line break
   dispatch({
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -26,7 +25,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠀⠀⠀⠀⠀⠀⠀⣠⠴⠒⡶⠛⡉⠈⠉⠻⣌⠉⠒⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -35,7 +34,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠀⠀⠀⠀⠀⣠⣾⠇⠀⡸⠁⠀⠘⣆⠀⠀⠈⠳⣄⠀⠈⢢⡀⠀⠀⠀⠀⠀⠀⠀",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -44,7 +43,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠀⠀⠀⠀⡼⢱⠃⠀⠠⡇⠀⠀⡆⠘⡄⠀⠀⠀⠈⠳⡄⠀⠹⡄⠀⠀⠀⠀⠀⠀",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -53,7 +52,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠀⠀⠀⡼⢣⠇⠀⠀⢀⣇⣀⣎⢹⣀⣹⣀⣀⣀⣀⣀⠘⡄⠀⢹⡀⠀⠀⠀⠀⠀",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -62,7 +61,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠀⠀⢰⠃⣸⠒⠉⠉⠉⠉⠁⠘⠚⠀⠀⠀⠀⠀⠀⠀⢹⢻⡀⠀⢧⠀⠀⠀⠀⠀",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -71,7 +70,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠀⠀⡜⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⣇⠀⢸⠀⠀⠀⠀⠀",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -80,7 +79,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠀⠀⡇⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⠸⠀⢰⡇⠀⠀⠀⠀",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -89,7 +88,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠀⢸⡃⠸⠿⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⡇⠀⠀⠈⡇⠀⠀⠀⠀",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -98,7 +97,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠀⢸⡇⠀⢻⠀⠀⠀⠘⠛⠀⠀⠉⠁⠀⠈⠟⠁⠀⠀⠀⡇⠀⡀⢠⡇⠀⠀⠀⠀",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -107,7 +106,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠀⣼⢹⠀⢸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⡇⠈⡇⠀⠀⠀⠀",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -116,7 +115,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠀⢹⣼⠇⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⡇⠐⡇⠀⠀⠀⠀",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -125,7 +124,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠀⢸⣿⡄⣸⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣗⠀⡇⠀⡇⠀⠀⠀⠀",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -134,7 +133,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠀⠀⢿⣧⣿⣿⠤⢤⠤⠤⡶⢶⣤⣔⣶⣶⣶⣶⢲⢶⠲⡏⠀⡇⢠⣿⠀⠀⠀⠀",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -143,7 +142,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠀⠀⠈⢻⣹⡎⡁⢸⠀⣆⣷⣼⣿⣿⣿⣿⠏⢹⣜⣼⢠⠃⠀⡇⠈⣻⡀⠀⠀⠀",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -152,7 +151,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠀⠀⠀⠀⡿⡇⢸⡈⣇⣿⣿⡿⠛⠟⠛⠁⠀⠸⢿⡿⣼⣀⡀⠁⠘⢿⡇⠀⠀⠀",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -161,7 +160,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠀⠀⠀⠀⣧⣡⣴⡟⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⣼⣧⣿⣿⣿⣿⣶⣾⣿⣀⠀⠀",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -170,7 +169,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠀⣠⣶⣿⣿⣟⣿⣿⣿⣿⣿⣿⣦⢖⣒⣒⡶⣴⣿⣿⣿⣻⣿⣿⣿⣿⣿⣿⣷⡀",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -179,7 +178,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⢠⣿⣿⣿⣿⣿⣿⣿⡟⠳⣯⣻⣿⣿⣿⣿⣿⣿⢟⣵⠟⠉⣼⣿⣿⣿⣿⣿⣿⡇",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -188,7 +187,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠘⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠙⠮⣿⣿⣿⣿⡿⠋⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⠁",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
@@ -197,7 +196,7 @@ export default function Neofetch(state, dispatch) {
     type: "ADD_TO_HISTORY",
     payload: {
       text: "⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣤⣀⡀⠈⠻⡿⠋⢀⣠⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⡆",
-      type: "standard",
+      type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },

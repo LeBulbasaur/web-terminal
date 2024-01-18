@@ -12,7 +12,18 @@ function Message({ message }) {
           <span className="message__prefix__mark">&gt;</span>
         </div>
       ) : null}
-      <span className={`message__${type}`}>{text}</span>
+      {type === "link" ? (
+        <a
+          className={`message__${type}`}
+          href={text}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {text.split("/")[text.split("/").length - 1]}
+        </a>
+      ) : (
+        <span className={`message__${type}`}>{text}</span>
+      )}
     </div>
   );
 }

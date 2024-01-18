@@ -11,3 +11,13 @@
 .message__blue {
   color: var(--gruvbox-blue);
 }
+
+.message__neofetch {
+  color: var(--gruvbox-green);
+  margin: -1.5px;
+}
+
+.message__link {
+  color: var(--gruvbox-blue);
+  text-decoration: underline;
+}

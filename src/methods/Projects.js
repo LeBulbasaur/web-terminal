@@ -46,8 +46,8 @@ export default async function Projects(message, state, dispatch) {
         dispatch({
           type: "ADD_TO_HISTORY",
           payload: {
-            text: element.name,
-            type: "standard",
+            text: element.url,
+            type: "link",
             origin: "server",
             path: GetPath(state),
           },
