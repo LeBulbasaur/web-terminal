@@ -22,7 +22,7 @@ export default async function HandleSetFiles(dispatch) {
           text: `Error connecting to server, please try again`,
           type: "error",
           origin: "server",
-          path: GetPath(state),
+          path: "",
         },
       });
     });

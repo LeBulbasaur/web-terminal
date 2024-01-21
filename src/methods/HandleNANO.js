@@ -1,7 +1,7 @@
 import HandleSetFiles from "./HandleSetFiles";
 import GetPath from "./GetPath";
 
-export function HandleNANO(message, dispatch) {
+export function HandleNANO(message, state, dispatch) {
   if (message.split(" ").length > 2) {
     dispatch({
       type: "ADD_TO_HISTORY",

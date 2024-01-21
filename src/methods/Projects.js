@@ -33,6 +33,15 @@ export default async function Projects(message, state, dispatch) {
       path: GetPath(state),
     },
   });
+  dispatch({
+    type: "ADD_TO_HISTORY",
+    payload: {
+      text: "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+      type: "standard",
+      origin: "server",
+      path: GetPath(state),
+    },
+  });
 
   await fetch("http://localhost:5277/api/scrape", {
     method: "GET",
@@ -48,6 +57,24 @@ export default async function Projects(message, state, dispatch) {
           payload: {
             text: element.url,
             type: "link",
+            origin: "server",
+            path: GetPath(state),
+          },
+        });
+        dispatch({
+          type: "ADD_TO_HISTORY",
+          payload: {
+            text: element.description,
+            type: "description",
+            origin: "server",
+            path: GetPath(state),
+          },
+        });
+        dispatch({
+          type: "ADD_TO_HISTORY",
+          payload: {
+            text: "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+            type: "standard",
             origin: "server",
             path: GetPath(state),
           },

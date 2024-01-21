@@ -69,7 +69,7 @@ function Input() {
             HandleCAT(inputRef.current.value, state, dispatch);
             break;
           case "nano":
-            HandleNANO(inputRef.current.value, dispatch);
+            HandleNANO(inputRef.current.value, state, dispatch);
             break;
           case "mv":
             HandleMV(inputRef.current.value, state, dispatch);
