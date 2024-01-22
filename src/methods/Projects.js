@@ -24,25 +24,6 @@ export default async function Projects(message, state, dispatch) {
     return;
   }
 
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "Projects:",
-      type: "standard",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-      type: "standard",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-
   await fetch("http://localhost:5277/api/scrape", {
     method: "GET",
     headers: {
@@ -51,6 +32,25 @@ export default async function Projects(message, state, dispatch) {
   })
     .then((res) => res.json())
     .then(async (res) => {
+      dispatch({
+        type: "ADD_TO_HISTORY",
+        payload: {
+          text: "Projects:",
+          type: "standard",
+          origin: "server",
+          path: GetPath(state),
+        },
+      });
+      dispatch({
+        type: "ADD_TO_HISTORY",
+        payload: {
+          text: "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+          type: "standard",
+          origin: "server",
+          path: GetPath(state),
+        },
+      });
+
       await res.forEach((element) => {
         dispatch({
           type: "ADD_TO_HISTORY",
