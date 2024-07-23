@@ -40,49 +40,28 @@ function Input() {
         await HandleSetFiles(dispatch);
 
         // save command to history based on input
-        switch (inputRef.current.value.split(" ")[0]) {
-          case "clear":
-            HandleCLEAR(inputRef.current.value, dispatch);
-            break;
-          case "help":
-            HandleHELP(inputRef.current.value, state, dispatch);
-            break;
-          case "ls":
-            HandleLS(inputRef.current.value, state, dispatch);
-            break;
-          case "cd":
-            HandleCD(inputRef.current.value, state, dispatch);
-            break;
-          case "mkdir":
-            HandleMKDIR(inputRef.current.value, state, dispatch);
-            break;
-          case "rmdir":
-            HandleRMDIR(inputRef.current.value, state, dispatch);
-            break;
-          case "touch":
-            HandleTOUCH(inputRef.current.value, state, dispatch);
-            break;
-          case "rm":
-            HandleRM(inputRef.current.value, state, dispatch);
-            break;
-          case "cat":
-            HandleCAT(inputRef.current.value, state, dispatch);
-            break;
-          case "nano":
-            HandleNANO(inputRef.current.value, state, dispatch);
-            break;
-          case "mv":
-            HandleMV(inputRef.current.value, state, dispatch);
-            break;
-          case "neofetch":
-            Neofetch(inputRef.current.value, state, dispatch);
-            break;
-          case "projects":
-            Projects(inputRef.current.value, state, dispatch);
-            break;
-          default:
-            HandleUndefined(inputRef.current.value, state, dispatch);
-            break;
+        const command = inputRef.current.value.split(" ")[0];
+
+        const commandHandlers = {
+          clear: () => HandleCLEAR(inputRef.current.value, dispatch),
+          help: () => HandleHELP(inputRef.current.value, state, dispatch),
+          ls: () => HandleLS(inputRef.current.value, state, dispatch),
+          cd: () => HandleCD(inputRef.current.value, state, dispatch),
+          mkdir: () => HandleMKDIR(inputRef.current.value, state, dispatch),
+          rmdir: () => HandleRMDIR(inputRef.current.value, state, dispatch),
+          touch: () => HandleTOUCH(inputRef.current.value, state, dispatch),
+          rm: () => HandleRM(inputRef.current.value, state, dispatch),
+          cat: () => HandleCAT(inputRef.current.value, state, dispatch),
+          nano: () => HandleNANO(inputRef.current.value, state, dispatch),
+          mv: () => HandleMV(inputRef.current.value, state, dispatch),
+          neofetch: () => Neofetch(inputRef.current.value, state, dispatch),
+          projects: () => Projects(inputRef.current.value, state, dispatch),
+        };
+
+        if (commandHandlers[command]) {
+          commandHandlers[command]();
+        } else {
+          HandleUndefined(inputRef.current.value, state, dispatch);
         }
 
         // clear input
