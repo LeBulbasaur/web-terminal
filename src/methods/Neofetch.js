@@ -11,194 +11,58 @@ export default function Neofetch(message, state, dispatch) {
     },
   });
 
-  // generate multiple dispatches on every line break
   dispatch({
     type: "ADD_TO_HISTORY",
     payload: {
-      text: "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+      text: "",
       type: "neofetch",
       origin: "server",
       path: GetPath(state),
     },
   });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠀⠀⠀⠀⠀⠀⠀⣠⠴⠒⡶⠛⡉⠈⠉⠻⣌⠉⠒⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠀⠀⠀⠀⠀⣠⣾⠇⠀⡸⠁⠀⠘⣆⠀⠀⠈⠳⣄⠀⠈⢢⡀⠀⠀⠀⠀⠀⠀⠀",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠀⠀⠀⠀⡼⢱⠃⠀⠠⡇⠀⠀⡆⠘⡄⠀⠀⠀⠈⠳⡄⠀⠹⡄⠀⠀⠀⠀⠀⠀",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠀⠀⠀⡼⢣⠇⠀⠀⢀⣇⣀⣎⢹⣀⣹⣀⣀⣀⣀⣀⠘⡄⠀⢹⡀⠀⠀⠀⠀⠀",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠀⠀⢰⠃⣸⠒⠉⠉⠉⠉⠁⠘⠚⠀⠀⠀⠀⠀⠀⠀⢹⢻⡀⠀⢧⠀⠀⠀⠀⠀",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠀⠀⡜⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⣇⠀⢸⠀⠀⠀⠀⠀",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠀⠀⡇⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⠸⠀⢰⡇⠀⠀⠀⠀",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠀⢸⡃⠸⠿⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⡇⠀⠀⠈⡇⠀⠀⠀⠀",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠀⢸⡇⠀⢻⠀⠀⠀⠘⠛⠀⠀⠉⠁⠀⠈⠟⠁⠀⠀⠀⡇⠀⡀⢠⡇⠀⠀⠀⠀",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠀⣼⢹⠀⢸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⡇⠈⡇⠀⠀⠀⠀",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠀⢹⣼⠇⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⡇⠐⡇⠀⠀⠀⠀",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠀⢸⣿⡄⣸⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣗⠀⡇⠀⡇⠀⠀⠀⠀",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠀⠀⢿⣧⣿⣿⠤⢤⠤⠤⡶⢶⣤⣔⣶⣶⣶⣶⢲⢶⠲⡏⠀⡇⢠⣿⠀⠀⠀⠀",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠀⠀⠈⢻⣹⡎⡁⢸⠀⣆⣷⣼⣿⣿⣿⣿⠏⢹⣜⣼⢠⠃⠀⡇⠈⣻⡀⠀⠀⠀",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠀⠀⠀⠀⡿⡇⢸⡈⣇⣿⣿⡿⠛⠟⠛⠁⠀⠸⢿⡿⣼⣀⡀⠁⠘⢿⡇⠀⠀⠀",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠀⠀⠀⠀⣧⣡⣴⡟⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⣼⣧⣿⣿⣿⣿⣶⣾⣿⣀⠀⠀",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠀⣠⣶⣿⣿⣟⣿⣿⣿⣿⣿⣿⣦⢖⣒⣒⡶⣴⣿⣿⣿⣻⣿⣿⣿⣿⣿⣿⣷⡀",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⢠⣿⣿⣿⣿⣿⣿⣿⡟⠳⣯⣻⣿⣿⣿⣿⣿⣿⢟⣵⠟⠉⣼⣿⣿⣿⣿⣿⣿⡇",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠘⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠙⠮⣿⣿⣿⣿⡿⠋⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⠁",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: "⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣤⣀⡀⠈⠻⡿⠋⢀⣠⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⡆",
-      type: "neofetch",
-      origin: "server",
-      path: GetPath(state),
-    },
-  });
+
+  //   dispatch({
+  //     type: "ADD_TO_HISTORY",
+  //     payload: {
+  //       text: `
+  // ⡁⠂⠄⡀⠋⠜⢀⣋⠀⡉⢎⣀⣉⠡⢆⡳⣌⢣⢺⣿⠿⠟⢛⡉⠭⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠀⠉⠉⡙⠛⠿⣿⡷⡘⢦⣳⠬⠐⠀⢻⡐⣯⢯⡝⣯⢺⣽⢣⡟⣽⢎⡿⣼
+  // ⠀⠀⠂⠄⡉⢌⠸⣧⠀⡹⡜⣠⢌⡱⢌⡳⣌⡷⠋⣡⠔⠊⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠢⢄⡙⠻⣶⢭⢧⣠⢠⣹⠜⣽⣳⢿⡽⣛⣾⢣⢿⣹⡞⣷⢯
+  // ⠆⡐⢈⠰⡈⠄⠒⣳⡀⠱⣒⠵⣊⠗⣪⠟⢁⡴⠋⠀⠀⣠⠴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠢⣄⠙⣶⢥⣋⠶⣙⣿⡽⣯⢿⣹⣯⢛⡾⣷⣻⡽⣯
+  // ⡒⣐⠂⢆⡱⢈⠔⡈⠇⠘⡧⢛⣜⡾⠁⡴⠋⠀⠀⢀⡜⠁⠀⠀⠀⠀⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⡈⢣⡈⠁⣯⢾⣿⢿⣿⣳⣯⣏⣿⢷⣯⢿⣽
+  // ⢲⠡⢎⢤⡓⣏⢦⠵⣚⠖⠤⢀⡞⢀⠞⠀⠀⠀⣠⠏⠀⢠⠀⠀⠀⢠⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⢠⡄⠀⠀⠀⠀⠀⠀⠘⢆⢳⡀⢷⣻⣿⣿⣿⢿⡷⣯⣿⣿⢯⣿⢿
+  // ⢣⠏⡜⢮⡵⢫⡞⣽⡹⢎⢆⡟⢀⡎⠀⠀⠀⣰⠃⠀⢀⣯⠀⠀⠀⣾⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⢺⡆⠀⠀⠀⢧⠀⠘⡆⠀⠀⠀⠀⠈⢆⢻⣣⣿⣿⣿⣿⣿⣟⣿⣷⣿⣻⣿⣿
+  // ⢡⢚⡭⢲⢭⣳⢹⢆⡻⢼⡿⠁⡜⠀⠀⠀⢰⠇⠀⠀⣸⠀⠀⡄⢠⢿⠀⠀⠀⠀⢄⢧⠀⠀⠀⠀⢸⢷⠀⠀⠀⠸⡄⠀⢱⠀⠀⠈⢦⠀⠈⡆⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣾
+  // ⡳⣮⡜⢧⠳⣌⣧⣫⣵⣿⠃⢰⠁⠀⠀⠀⡿⠀⠀⢀⡇⠀⢀⡇⣼⢸⢀⡄⠀⠀⠀⢸⡆⠀⠀⠀⣸⠸⡆⠀⠀⠀⣇⠀⠀⢻⠀⠀⢸⡆⠀⠰⠸⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿
+  // ⢣⢇⠿⣜⢧⡟⠛⠛⢛⣻⠀⡟⢠⠇⠀⢠⡇⠀⠀⣼⣃⡤⢼⠿⡟⢻⠻⡇⠀⠀⠀⢸⡇⠀⠀⠀⢻⠛⡟⠛⠧⠤⣼⣀⠀⠸⡇⠀⠀⡇⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣧⣿⣿⣿
+  // ⢧⣚⡬⡙⢾⠁⢀⡴⢛⡇⠀⡇⡾⠀⠀⣸⠇⠀⠋⡿⡇⠀⢸⢀⠏⢹⠙⡇⠀⠀⠀⢸⣿⠀⠀⠀⡜⠉⢹⠀⠀⠀⡟⡆⠉⠁⣧⠀⠀⢹⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+  // ⣟⣮⢵⣋⢾⡀⠏⡘⣸⠇⢰⠇⡇⠀⠀⣿⠂⠀⢠⡇⡇⠀⢼⢸⠀⢸⡀⡇⠀⠀⠀⢸⡿⠀⠀⠀⡇⠀⠈⡇⠀⠀⡅⢷⠀⠀⢻⠀⠀⠸⡄⠀⢠⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+  // ⣿⣞⠧⠿⣻⡷⠶⢾⣿⠂⣼⡆⡇⠀⠀⣿⠀⠀⢸⢀⣷⣠⣾⣸⣄⣀⣧⢷⡀⠀⠀⢸⡇⠀⠀⣸⠁⣀⣀⣽⣐⣀⣃⡸⠀⠀⡽⡇⠀⢠⡃⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+  // ⣤⣶⣾⣿⡏⠀⠀⣼⠻⡄⡏⣇⢹⢀⣾⣿⣶⣷⡿⠟⣻⣿⣿⣿⣿⣿⣿⣷⣦⡀⣀⣸⣀⢀⣴⣿⣿⣿⡿⣿⣿⣿⣟⠻⢿⣶⣦⣧⣤⣸⠃⠀⠀⢨⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+  // ⠟⠻⠛⠿⣷⠀⢸⠃⠘⡇⠇⠸⣼⡇⣿⣿⣿⠋⢠⣾⠟⣗⣿⣿⣏⣷⡄⠙⣿⣿⡿⣿⣿⣿⡟⠙⠁⢴⣿⣿⡇⠘⡟⢿⣆⠹⣿⣿⡿⢻⠀⢀⠀⢨⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+  // ⠠⢡⠒⠤⠈⢧⠋⠂⣚⡇⡇⠀⢻⣧⠀⣿⣿⡀⣿⡇⠐⣾⣿⣿⣿⢿⣿⠀⠈⣿⡇⡄⢸⣿⠀⠀⢰⣾⢿⣿⣿⢀⡷⠀⣿⡜⣿⣿⠀⡼⠀⢸⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+  // ⠀⡄⠈⠠⢡⠂⠀⢉⠻⣿⡇⠀⡄⠻⣆⣿⣿⡧⠻⠇⠀⣇⠈⠛⠋⠀⡟⠀⢀⣿⢷⣠⠻⣿⡀⠀⠘⣇⠈⠛⠛⣜⠇⠀⡿⢡⣿⠿⣧⠇⠀⢸⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+  // ⡀⢄⠡⠐⡀⢀⠞⣩⠒⣀⡇⠈⡇⠀⠘⢯⣿⣧⠰⠀⠀⠈⠳⠤⡤⠎⠁⢀⣾⠯⠞⠁⠀⠹⣷⡀⠀⠘⠲⠤⠤⠋⠀⠘⢁⣾⡟⢨⠏⠀⠀⢸⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⡿⣼⣎
+  // ⠀⢆⡐⢈⠔⢈⠾⡡⠃⠈⡇⠀⡇⠀⠀⠀⠳⣽⣿⣦⣄⣀⣀⢀⣀⣤⣶⡿⠋⠀⠀⠀⠀⠀⠙⢿⣶⣄⣀⣀⣀⣀⣠⣶⣿⡿⠂⠀⠀⠀⠀⢸⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⡟⣿⣻
+  // ⠈⡔⢠⠈⠔⡠⢉⠳⣌⠥⡇⠀⡇⠀⠀⠀⠀⣸⢳⡉⠙⠛⠛⠛⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠛⠛⠛⠋⠁⣞⢹⠀⠀⠀⠀⠀⢸⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣜⣳⢯
+  // ⡡⢜⢠⠊⡔⢡⢆⡷⢎⠀⡇⠀⡇⠀⠀⠀⠀⢸⠻⣧⠀⠀⠀⠀⠀⠀⠀⠐⢤⠤⢤⣀⡤⠤⠤⠂⠀⠀⠀⠀⠀⠀⠀⣸⢋⣹⠀⠀⠀⠀⠀⢸⠀⢸⣿⣿⣿⣿⣿⣿⢿⣷⣎⡼⣿
+  // ⢳⡌⢆⠱⣌⢣⡞⣝⢫⠿⡄⠀⡇⠀⠀⠀⠀⢸⡃⠘⣆⠀⠀⠀⠀⠀⠀⠀⠘⣄⠀⡇⠀⣰⠁⠀⠀⠀⠀⠀⠀⠀⣰⢻⠄⣾⠀⠀⠀⠀⠀⢸⠀⢸⣿⣿⣿⣿⣿⣿⢯⣿⡾⣽⣿
+  // ⡳⡜⢬⢒⡎⢳⡜⡱⢊⠽⠀⠀⡇⠀⠀⠀⠀⢸⣇⠱⣀⣓⢦⣀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠁⠀⠀⠀⠀⠀⣀⡴⠎⡡⣿⠠⣿⠀⠀⠀⠀⠀⢸⢠⢈⣿⣿⣿⣿⣿⣿⢯⣿⣟⣿⣿
+  // ⣳⡜⢣⢫⡜⣣⣜⡱⣃⢾⠀⠀⡇⠀⠀⠀⠀⠀⣿⡞⠉⠉⢻⣎⠙⡲⣤⣀⡀⠀⠀⠀⠀⠀⠀⣀⣤⣖⡫⢁⠒⣨⠔⣏⡐⣯⠀⠀⠀⠀⠀⢸⢸⠠⣿⣿⣿⣿⣿⣿⣞⣿⣿⣿⣿
+  // ⣧⢋⢧⢳⡼⣱⢮⡱⣝⢾⠀⠀⡇⠀⠀⠀⠀⠀⣿⡇⠀⠀⢸⣿⡟⠋⢿⠀⠉⠓⠢⠤⠴⠚⠉⠀⣾⡌⢉⡟⠳⣼⡍⡧⡐⡷⠀⠀⠀⢀⠀⠸⢾⠀⣿⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿
+  // ⣯⠛⣮⢳⡞⣵⣯⡟⣼⣿⠀⢸⡇⠀⠀⠀⠀⠀⣿⡇⠀⠀⢸⡇⠙⢲⣼⠀⠀⠀⠀⠀⠀⢠⡖⠁⣿⣷⠚⠁⠀⣿⡔⣧⠘⣧⠀⠀⠀⣼⠀⢹⢸⠐⣿⣿⣿⣿⣿⣿⣾⣿⡟⣿⣿
+  // ⣯⢞⡭⣾⣵⣻⢾⡵⣿⡿⠀⣸⢧⠀⠀⠀⠀⠀⢸⡇⠀⠀⢸⡇⠀⠀⠈⠉⠒⠒⢤⣀⡤⠖⠒⠊⠉⠀⠀⠀⢰⣿⡧⣗⠨⡇⠀⠀⠀⡇⠀⢸⡸⠀⣿⣿⣿⣿⣿⣿⣯⣿⣿⣿⣿
+  // ⣟⢮⣝⡳⣝⣾⣯⣿⢿⡇⠀⣿⣸⣀⢠⣤⠴⠶⠾⠃⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⢯⠀⠀⠀⠀⠀⠀⠀⠀⢾⣟⠷⣿⡐⡇⠀⠀⢠⡇⠀⢸⡇⡇⢸⣿⣿⣿⣿⣿⣯⣿⡝⣻⣿
+  // ⣿⣞⡾⣽⣾⣽⣿⡾⠛⢧⣴⠋⠀⠉⠙⠀⠀⠀⠀⠀⠀⠀⢸⣧⠀⠀⠀⠀⠀⠀⠀⢺⠀⠀⠀⠀⠀⠀⠀⠀⣸⠺⣟⢿⣾⡇⠀⠀⣼⡇⠀⢸⣱⣧⠸⣿⣿⣿⣿⣿⢿⣷⣹⣚⣿
+  // ⣿⣾⣽⣿⣿⣾⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠙⢦⡀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⢀⣠⠚⠁⠀⠀⠙⢲⡏⠀⢠⣿⡇⠀⣿⣾⣸⡀⣿⣿⣿⣿⣿⣿⣿⢧⣻⣿
+  // ⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠄⠀⠤⢀⠀⠈⣇⠀⠰⣈⠳⢄⠀⠀⢸⠀⠀⠤⠀⠀⠉⠀⠀⠀⠀⠀⠀⢸⠀⢀⣾⣿⡇⠀⣿⡉⢻⡃⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿
+  // ⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⠀⠀⠈⠳⣤⣙⢦⣴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠀⢤⣿⣿⡇⢰⠏⡇⠘⡯⣛⢿⣿⣿⣿⣿⣿⣿⣿⣿
+  // ⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠁⠂⠐⠀⠀⠠⠀⠀⠀⠀⢸⡇⠀⠀⠀⠘⢯⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣧⡼⢻⣿⣿⡇⡼⠀⢱⠀⣧⠈⢳⣻⣿⣿⣿⣿⣿⣿⣿
+  // ⣿⣿⣿⣿⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠁⠀⡀⠄⠀⠀⠈⣷⠀⠀⠀⠀⡀⠐⠀⠐⠀⠂⠀⠉⠀⢀⠸⣿⣿⣿⡇⠀⢸⠀⢸⠀⡄⢳⣻⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+  //       `,
+  //       type: "neofetch",
+  //       origin: "server",
+  //       path: GetPath(state),
+  //     },
+  //   });
 }

@@ -2,6 +2,7 @@
   display: flex;
   word-break: break-all;
   gap: 0.5rem;
+  white-space: pre-line;
 }
 
 .message__error {
@@ -12,9 +13,17 @@
   color: var(--gruvbox-blue);
 }
 
+.message_white {
+  color: var(--gruvbox-fg);
+}
+
+.message_yellow {
+  color: var(--gruvbox-yellow);
+}
+
 .message__neofetch {
-  color: var(--gruvbox-green);
-  margin: -1.5px;
+  color: var(--gruvbox-purple);
+  // margin: -1.5px;
 }
 
 .message__link {
@@ -26,4 +35,52 @@
 .message__description {
   color: var(--gruvbox-aqua);
   word-break: break-word;
+}
+
+#neofetch {
+  // position: relative;
+}
+
+.neofetch_color_blocks {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: end;
+  justify-content: end;
+  padding-right: 13.5rem;
+}
+
+.neofetch_color_blocks_row {
+  display: flex;
+}
+
+.square_color {
+  width: 2rem;
+  height: 1.5rem;
+}
+
+.square_color_red {
+  background-color: var(--gruvbox-red);
+}
+.square_color_aqua {
+  background-color: var(--gruvbox-aqua);
+}
+.square_color_yellow {
+  background-color: var(--gruvbox-yellow);
+}
+.square_color_purple {
+  background-color: var(--gruvbox-purple);
+}
+.square_color_blue {
+  background-color: var(--gruvbox-blue);
+}
+.square_color_green {
+  background-color: var(--gruvbox-green);
+}
+.square_color_orange {
+  background-color: var(--gruvbox-orange);
+}
+.square_color_gray {
+  background-color: var(--gruvbox-gray);
 }
