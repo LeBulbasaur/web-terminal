@@ -14,7 +14,7 @@ export default function Neofetch(message, state, dispatch) {
   dispatch({
     type: "ADD_TO_HISTORY",
     payload: {
-      text: "",
+      text: window.innerWidth,
       type: "neofetch",
       origin: "server",
       path: GetPath(state),
