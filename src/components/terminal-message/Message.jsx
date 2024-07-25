@@ -1,4 +1,5 @@
 import "./message.scss";
+import parse from "react-html-parser";
 
 function Message({ message }) {
   // destructuring message object
@@ -28,68 +29,68 @@ function Message({ message }) {
               ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ lebulbasaur@portfolio
               <br />
               ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣤⣿⣿⣿⣤⡀⢀⣤⣤⠀⢀⣠⣴⣶⣦⠀⠀{" "}
-              <span className="message_white">-------------------------</span>
+              <span className="message__white">-------------------------</span>
               <br />
               ⠀⠀⠀⠀⠀⠀⢀⣤⣾⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣻⣿⣿⠀⠀{" "}
-              <span className="message_yellow">Host:</span>{" "}
-              <span className="message_white">Antoni Zaremba, 22yo</span>
+              <span className="message__yellow">Host:</span>{" "}
+              <span className="message__white">Antoni Zaremba, 22yo</span>
               <br />
               ⠀⠀⠀⠀⠀⢠⣿⣿⣿⡿⠟⠉⠉⠉⠉⠙⠛⠿⣿⣿⣿⣿⣟⣶⣾⡏⠀⠀{" "}
-              <span className="message_yellow">Location:</span>{" "}
-              <span className="message_white">Kraków, Poland</span>
+              <span className="message__yellow">Location:</span>{" "}
+              <span className="message__white">Kraków, Poland</span>
               <br />
               ⠀⠀⠀⠀⢀⣼⡿⣻⡿⠔⠒⠓⠀⠀⠀⠀⠒⠒⢼⣿⣿⣿⢹⣟⣿⡄⠀⠀{" "}
-              <span className="message_yellow">Current Role:</span>{" "}
-              <span className="message_white">Student, 3rd year</span>
+              <span className="message__yellow">Current Role:</span>{" "}
+              <span className="message__white">Student, 3rd year</span>
               <br />
               ⠀⠀⠀⣠⣾⣿⣿⣿⢁⣠⣀⣤⡀⠀⠀⠀⠄⣀⣀⡟⢿⣿⣾⣿⣿⣷⠀⠀{" "}
-              <span className="message_yellow">Education:</span>{" "}
-              <span className="message_white">BSc in Cybersec-Forensics</span>
+              <span className="message__yellow">Education:</span>{" "}
+              <span className="message__white">BSc in Cybersec-Forensics</span>
               <br />
               ⠀⠀⠈⠉⠀⢸⣿⣯⠟⣁⣈⡙⠇⠀⠀⠐⠛⢫⠙⠻⣾⣿⣿⣽⡷⣽⠀⠀{" "}
-              <span className="message_yellow">University:</span>{" "}
-              <span className="message_white">AGH University</span>
+              <span className="message__yellow">University:</span>{" "}
+              <span className="message__white">AGH University</span>
               <br />
               ⠀⠀⠀⠀⠀⣨⣿⡿⢾⣷⣶⣿⠀⠀⠀⢠⣿⣤⣽⡄⠸⣿⡿⠿⢇⠈⢳⣆{" "}
-              <span className="message_yellow">Profession:</span>{" "}
-              <span className="message_white">IT technician</span>
+              <span className="message__yellow">Profession:</span>{" "}
+              <span className="message__white">IT technician</span>
               <br />
               ⠀⠀⠀⠀⢀⣗⢻⡇⠈⠛⠛⠁⠀⠀⠀⠈⠛⠻⠟⠁⢠⣿⣷⣴⡈⡇⠀⠁{" "}
-              <span className="message_yellow">Skills:</span>{" "}
-              <span className="message_white">JavaScript, Python, .NET,</span>
+              <span className="message__yellow">Skills:</span>{" "}
+              <span className="message__white">JavaScript, Python, .NET,</span>
               <br />
               ⠀⠀⠀⠀⠈⢯⣹⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⡗⣱⠃⠀⠀{" "}
-              <span className="message_white">
+              <span className="message__white">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;React, Flask,
                 SQL, Git
               </span>{" "}
               <br />
               ⠀⠀⠀⠀⠀⢰⣿⡟⣦⠀⠀⠀⠀⠲⠀⠀⠀⠀⠀⣰⣿⢿⣿⣿⠁⠀⠀⠀{" "}
-              <span className="message_yellow">Languages:</span>{" "}
-              <span className="message_white">Polish, English,</span>
+              <span className="message__yellow">Languages:</span>{" "}
+              <span className="message__white">Polish, English,</span>
               <br />
               ⠀⠀⠀⠀⠀⢸⣿⣧⣿⣷⢦⡀⠀⠀⠀⢀⣀⡤⢚⣿⣿⣾⠋⣿⠀⠀⠀⠀{" "}
-              <span className="message_white">
+              <span className="message__white">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Japanese,
                 Russian (A1)
               </span>
               <br />
               ⠀⠀⠀⠀⠀⠸⠁⢿⡿⣿⣷⣌⡓⠒⠊⢉⣀⣴⣿⣿⡟⢿⠀⠈⠀⠀⠀⠀{" "}
-              <span className="message_yellow">Interest:</span>{" "}
-              <span className="message_white">AI and Cybersec</span>
+              <span className="message__yellow">Interest:</span>{" "}
+              <span className="message__white">AI and Cybersec</span>
               <br />
               ⠀⠀⠀⠀⠀⠀⠀⠸⠃⣸⣿⣿⣿⠀⣾⣿⣿⣿⣿⡿⣄⠀⠀⠀⠀⠀⠀⠀{" "}
-              <span className="message_yellow">Hobby:</span>{" "}
-              <span className="message_white">Trying different distros</span>
+              <span className="message__yellow">Hobby:</span>{" "}
+              <span className="message__white">Trying different distros</span>
               <br />
               ⠀⠀⠀⠀⠀⠀⠀⢀⡔⢁⣿⣿⡿⣴⣿⣿⣿⣯⡾⠀⠈⢷⡄⠀⠀⠀⠀⠀{" "}
-              <span className="message_white">
+              <span className="message__white">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Collecting old
                 thinkpads
               </span>
               <br />
               ⠀⠀⠀⠀⠀⠀⣰⠋⠀⣸⢿⣽⡿⠻⣿⣿⣿⣿⠇⠀⠀⠀⡿⣆⠀⠀⠀⠀{" "}
-              <span className="message_white">
+              <span className="message__white">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes, I'm a nerd
                 ദ്ദി(⎚_⎚)
               </span>
@@ -138,60 +139,60 @@ function Message({ message }) {
             <br />
             lebulbasaur@portfolio
             <br />
-            <span className="message_white">-------------------------</span>
+            <span className="message__white">-------------------------</span>
             <br />
-            <span className="message_yellow">Host:</span>{" "}
-            <span className="message_white">Antoni Zaremba, 22yo</span>
+            <span className="message__yellow">Host:</span>{" "}
+            <span className="message__white">Antoni Zaremba, 22yo</span>
             <br />
-            <span className="message_yellow">Location:</span>{" "}
-            <span className="message_white">Kraków, Poland</span>
+            <span className="message__yellow">Location:</span>{" "}
+            <span className="message__white">Kraków, Poland</span>
             <br />
-            <span className="message_yellow">Current Role:</span>{" "}
-            <span className="message_white">Student, 3rd year</span>
+            <span className="message__yellow">Current Role:</span>{" "}
+            <span className="message__white">Student, 3rd year</span>
             <br />
-            <span className="message_yellow">Education:</span>{" "}
-            <span className="message_white">Cybersec-Forensics BSc</span>
+            <span className="message__yellow">Education:</span>{" "}
+            <span className="message__white">Cybersec-Forensics BSc</span>
             <br />
-            <span className="message_yellow">University:</span>{" "}
-            <span className="message_white">AGH University</span>
+            <span className="message__yellow">University:</span>{" "}
+            <span className="message__white">AGH University</span>
             <br />
-            <span className="message_yellow">Profession:</span>{" "}
-            <span className="message_white">IT technician</span>
+            <span className="message__yellow">Profession:</span>{" "}
+            <span className="message__white">IT technician</span>
             <br />
-            <span className="message_yellow">Skills:</span>{" "}
-            <span className="message_white">JavaScript, Python, .NET,</span>
+            <span className="message__yellow">Skills:</span>{" "}
+            <span className="message__white">JavaScript, Python, .NET,</span>
             <br />
-            <span className="message_white">
+            <span className="message__white">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;React, Flask, SQL,
               Git
             </span>{" "}
             <br />
-            <span className="message_yellow">Languages:</span>{" "}
-            <span className="message_white">Polish, English,</span>
+            <span className="message__yellow">Languages:</span>{" "}
+            <span className="message__white">Polish, English,</span>
             <br />
-            <span className="message_white">
+            <span className="message__white">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Japanese,
               Russian (A1)
             </span>
             <br />
-            <span className="message_yellow">Interest:</span>{" "}
-            <span className="message_white">AI and Cybersec</span>
+            <span className="message__yellow">Interest:</span>{" "}
+            <span className="message__white">AI and Cybersec</span>
             <br />
-            <span className="message_yellow">Hobby:</span>{" "}
-            <span className="message_white">Trying different distros</span>
+            <span className="message__yellow">Hobby:</span>{" "}
+            <span className="message__white">Trying different distros</span>
             <br />
-            <span className="message_white">
+            <span className="message__white">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Collecting old thinkpads
             </span>
             <br />
-            <span className="message_white">
+            <span className="message__white">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes, I'm a nerd
               ദ്ദി(⎚_⎚)
             </span>
           </div>
         )
       ) : (
-        <span className={`message__${type}`}>{text}</span>
+        <span className={`message__${type}`}>{parse(text)}</span>
       )}
     </div>
   );

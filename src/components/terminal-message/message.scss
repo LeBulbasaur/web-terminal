@@ -5,6 +5,10 @@
   white-space: pre-line;
 }
 
+.message__standard {
+  word-break: keep-all;
+}
+
 .message__error {
   color: var(--gruvbox-red);
 }
@@ -13,11 +17,15 @@
   color: var(--gruvbox-blue);
 }
 
-.message_white {
+.message__green {
+  color: var(--gruvbox-green);
+}
+
+.message__white {
   color: var(--gruvbox-fg);
 }
 
-.message_yellow {
+.message__yellow {
   color: var(--gruvbox-yellow);
 }
 
