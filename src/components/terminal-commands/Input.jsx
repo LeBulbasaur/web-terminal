@@ -18,6 +18,9 @@ import { HandleNANO } from "../../methods/HandleNANO";
 function Input() {
   const [input, setInput] = useState("");
   const [previousMessageIndex, setPreviousMessageIndex] = useState(0);
+  const [placeholderContent, setPlaceholderContent] = useState(
+    "Type 'help' for a list of commands"
+  );
   const { state, dispatch } = useContext(MessageContext);
   const inputRef = useRef(null);
 
@@ -67,6 +70,7 @@ function Input() {
       // clear input
       setInput("");
       setPreviousMessageIndex(0);
+      setPlaceholderContent("");
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
 
@@ -133,6 +137,7 @@ function Input() {
         value={input}
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={(e) => handleKeyDown(e)}
+        placeholder={placeholderContent}
       />
     </div>
   );
