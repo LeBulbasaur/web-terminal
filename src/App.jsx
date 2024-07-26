@@ -23,7 +23,7 @@ function App() {
           </div>
         )}
       </MessageContext.Provider>
-      <footer className="footer"> Copyright © 2023 LeBulbasaur </footer>
+      <footer className="footer"> Copyright © 2024 LeBulbasaur </footer>
     </div>
   );
 }
