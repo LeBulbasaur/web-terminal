@@ -21,7 +21,10 @@
 
 .message__prefix {
   white-space: nowrap;
-  font-weight: bold;
+}
+
+.message__prefix__text {
+  color: var(--gruvbox-orange);
 }
 
 .message__prefix__tilde {

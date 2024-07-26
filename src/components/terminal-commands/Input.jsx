@@ -125,8 +125,9 @@ function Input() {
     <div className="input__container">
       <div className="input__text">
         <span className="message__prefix">
-          <span className="message__prefix__tilde">~{GetPath(state)} </span>
-          <span className="message__prefix__mark">&gt;</span>
+          <span className="message__prefix__text">root@zarant-term:</span>
+          <span className="message__prefix__tilde">~{GetPath(state)}</span>
+          <span className="message__prefix__mark">$</span>
         </span>
       </div>
       <textarea

@@ -16,7 +16,13 @@
 .message__blue {
   color: var(--gruvbox-blue);
 }
+.message__purple {
+  color: var(--gruvbox-purple);
+}
 
+.message__red {
+  color: var(--gruvbox-red);
+}
 .message__green {
   color: var(--gruvbox-green);
 }
@@ -43,6 +49,12 @@
 .message__description {
   color: var(--gruvbox-aqua);
   word-break: break-word;
+}
+
+.message__portfolio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #neofetch {

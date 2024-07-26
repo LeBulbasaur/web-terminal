@@ -41,7 +41,25 @@ export function reducer(state, action) {
 }
 
 export const initialState = {
-  history: [],
+  history: [
+    {
+      origin: "server",
+      path: "",
+      text: `
+      <pre class='message__portfolio message__purple'>
+                   _    __       _ _       
+  _ __   ___  _ __| |_ / _| ___ | (_) ___  
+ | '_ \\\ / _ \\\| '__| __| |_ / _ \\\| | |/ _ \\\ 
+ | |_) | (_) | |  | |_|  _| (_) | | | (_) |
+ | .__/ \\\___/|_|   \\\__|_|  \\\___/|_|_|\\\___/ 
+ |_|        
+      </pre>
+      Hi, my name is <span class='message__blue'>Antoni Zaremba</span> and this is my terminal-like portfolio project! I'm a 22 yo student based in Kraków. To find more about me, please feel free to take a look at my app <span class='message__yellow'>(⁀ᗢ⁀)</span>.
+      
+      `,
+      type: "standard",
+    },
+  ],
   commands: [],
   files: [],
   currentDirectory: 0,

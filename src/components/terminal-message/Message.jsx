@@ -9,8 +9,9 @@ function Message({ message }) {
     <div className="message__text">
       {origin === "user" ? (
         <div className="message__prefix">
-          <span className="message__prefix__tilde">~{path} </span>
-          <span className="message__prefix__mark">&gt;</span>
+          <span className="message__prefix__text">root@zarant-term:</span>
+          <span className="message__prefix__tilde">~{path}</span>
+          <span className="message__prefix__mark">$</span>
         </div>
       ) : null}
       {type === "link" ? (
@@ -98,7 +99,10 @@ function Message({ message }) {
               ⠀⠀⠀⠀⠀⣼⠇⠀⣠⣿⣸⣿⣤⣴⣿⣿⣿⣿⠀⠀⠀⢰⠀⠘⡆⠀
               <br />
             </span>
-            <div className="neofetch_color_blocks">
+            <div
+              className="neofetch_color_blocks"
+              style={{ marginBottom: "1rem" }}
+            >
               <div className="neofetch_color_blocks_row">
                 <div className="square_color square_color_red"></div>
                 <div className="square_color square_color_aqua"></div>
@@ -192,7 +196,7 @@ function Message({ message }) {
           </div>
         )
       ) : (
-        <span className={`message__${type}`}>{parse(text)}</span>
+        <span className={`message message__${type}`}>{parse(text)}</span>
       )}
     </div>
   );
