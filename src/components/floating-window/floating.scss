@@ -1,0 +1,31 @@
+.floating__container {
+  max-width: 75%;
+  max-height: 90%;
+  background-color: var(--gruvbox-bg);
+  border: 1px solid var(--gruvbox-green);
+  border-radius: 25px;
+  padding: 10px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.floating__topbar {
+  height: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  cursor: grab;
+}
+
+.floating__topbar svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--gruvbox-red);
+  cursor: pointer;
+}
+
+.floating__topbar svg:hover {
+  fill: var(--gruvbox-orange);
+}

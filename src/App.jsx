@@ -5,6 +5,7 @@ import { initialState, reducer } from "./hooks/reducer";
 import Input from "./components/terminal-commands/Input";
 import History from "./components/terminal-history/History";
 import NanoInput from "./components/terminal-nano-input/NanoInput";
+import Floating from "./components/floating-window/Floating";
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -12,6 +13,7 @@ function App() {
   return (
     <div className="main">
       <MessageContext.Provider value={{ state, dispatch }}>
+        <Floating />
         {state.nanoMode ? (
           <div className="terminal__container">
             <NanoInput />

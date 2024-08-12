@@ -79,6 +79,9 @@ export default async function Projects(message, state, dispatch) {
             path: GetPath(state),
           },
         });
+        dispatch({
+          type: "OPEN_FLOATING_BOX",
+        });
       });
     })
     .catch((err) => {

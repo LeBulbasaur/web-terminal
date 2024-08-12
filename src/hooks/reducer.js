@@ -36,6 +36,18 @@ export function reducer(state, action) {
         nanoMode: action.payload,
       };
     }
+    case "OPEN_FLOATING_BOX": {
+      return {
+        ...state,
+        floatingVisibility: "block",
+      };
+    }
+    case "CLOSE_FLOATING_BOX": {
+      return {
+        ...state,
+        floatingVisibility: "none",
+      };
+    }
   }
   throw Error("Unknown action: " + action.type);
 }
@@ -64,4 +76,5 @@ export const initialState = {
   files: [],
   currentDirectory: 0,
   nanoMode: false,
+  floatingVisibility: "block",
 };
