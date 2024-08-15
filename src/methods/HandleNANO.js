@@ -75,6 +75,12 @@ export async function HandleNANOInitial(state, dispatch) {
 }
 
 export async function HandleNANOChange(message, state, dispatch, savedRef) {
+  if (message.length > 250) {
+    savedRef.current.innerText = "[Input is too long!]";
+    savedRef.current.style.display = "block";
+    return;
+  }
+
   const fileName = state.commands[state.commands.length - 1].text.split(" ")[1];
 
   const file = state.files.find(
@@ -100,6 +106,7 @@ export async function HandleNANOChange(message, state, dispatch, savedRef) {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        savedRef.current.innerText = "[Saved]";
         savedRef.current.style.display = "block";
         HandleSetFiles(dispatch);
       })
