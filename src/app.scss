@@ -7,7 +7,7 @@
 }
 
 .terminal__container {
-  height: 88vh;
+  height: 89vh;
   width: 90vw;
   padding: 0.5rem;
   margin: 1rem;
@@ -35,6 +35,39 @@
   color: var(--gruvbox-green);
 }
 
-.footer {
+footer {
   font-size: small;
+  display: flex;
+  align-items: center;
+}
+
+footer p {
+  margin: 0 10px 0 0;
+}
+
+footer svg {
+  height: 18px;
+}
+
+.svg__container {
+  margin-right: 10px;
+  position: relative;
+  background-color: var(--gruvbox-fg);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg__container a {
+  width: 18px;
+  height: 18px;
+}
+
+.svg__github {
+  fill: black;
+}
+
+.svg__linkedin {
+  fill: #0e76a8;
 }
