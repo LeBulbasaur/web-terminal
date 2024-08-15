@@ -1,45 +1,19 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { MessageContext } from "../../context/context";
+import parse from "react-html-parser";
 import "./floating.scss";
 
 export default function Floating() {
-  const [isClicked, setIsClicked] = useState(false);
   const { state, dispatch } = useContext(MessageContext);
-  const [pos, setPos] = useState({ x: 0, y: 0 });
-  const [initialPos, setInitialPos] = useState({ x: 0, y: 0 });
-
-  //  TODO: FIX MOVING SYSTEM
-  const MouseMovement = (e) => {
-    e.stopPropagation();
-    if (isClicked) {
-      setPos({ x: e.clientX - initialPos.x, y: e.clientY - initialPos.y });
-    }
-  };
 
   return (
     <div
       className="floating__container"
       style={{
         display: state.floatingVisibility,
-        top: pos.y + "px",
-        left: pos.x + "px",
       }}
     >
-      <div
-        className="floating__topbar"
-        onMouseDown={(e) => {
-          e.stopPropagation();
-          setIsClicked(true);
-          setInitialPos({ x: e.clientX, y: e.clientY });
-          e.target.style.cursor = "grabbing";
-        }}
-        onMouseUp={(e) => {
-          e.stopPropagation();
-          setIsClicked(false);
-          e.target.style.cursor = "grab";
-        }}
-        onMouseMove={(e) => MouseMovement(e)}
-      >
+      <div className="floating__topbar">
         <svg
           clipRule="evenodd"
           fillRule="evenodd"
@@ -59,12 +33,7 @@ export default function Floating() {
           />
         </svg>
       </div>
-      <div className="floating__content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima maiores
-        ullam consequatur. Molestias placeat autem tempora cumque accusantium
-        totam nobis, a adipisci voluptates natus magnam sunt assumenda, ullam
-        inventore nesciunt.
-      </div>
+      <div className="floating__content">{parse(state.floatingContent)}</div>
     </div>
   );
 }

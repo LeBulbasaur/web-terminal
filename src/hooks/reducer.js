@@ -40,6 +40,7 @@ export function reducer(state, action) {
       return {
         ...state,
         floatingVisibility: "block",
+        floatingContent: action.payload,
       };
     }
     case "CLOSE_FLOATING_BOX": {
@@ -66,8 +67,10 @@ export const initialState = {
  | .__/ \\\___/|_|   \\\__|_|  \\\___/|_|_|\\\___/ 
  |_|        
       </pre>
+      <div class='message__portfolio__description'>
       Hi, my name is <span class='message__blue'>Antoni Zaremba</span> and this is my terminal-like portfolio project! I'm a 22 yo student based in Kraków. To find more about me, please feel free to take a look at my app <span class='message__yellow'>(⁀ᗢ⁀)</span>.
-      
+      <br/>
+      </div>
       `,
       type: "standard",
     },
@@ -76,5 +79,6 @@ export const initialState = {
   files: [],
   currentDirectory: 0,
   nanoMode: false,
-  floatingVisibility: "block",
+  floatingVisibility: "none",
+  floatingContent: "",
 };
