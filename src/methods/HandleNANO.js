@@ -2,6 +2,15 @@ import HandleSetFiles from "./HandleSetFiles";
 import GetPath from "./GetPath";
 
 export function HandleNANO(message, state, dispatch) {
+  dispatch({
+    type: "ADD_TO_HISTORY",
+    payload: {
+      text: message,
+      type: "standard",
+      origin: "user",
+      path: GetPath(state),
+    },
+  });
   if (message.split(" ").length > 2) {
     dispatch({
       type: "ADD_TO_HISTORY",
@@ -13,16 +22,18 @@ export function HandleNANO(message, state, dispatch) {
       },
     });
     return;
+  } else if (message.split(" ")[1].length > 12) {
+    dispatch({
+      type: "ADD_TO_HISTORY",
+      payload: {
+        text: "Invalid command syntax: file name is too long!",
+        type: "error",
+        origin: "server",
+        path: GetPath(state),
+      },
+    });
+    return;
   }
-  dispatch({
-    type: "ADD_TO_HISTORY",
-    payload: {
-      text: message,
-      type: "standard",
-      origin: "user",
-      path: GetPath(state),
-    },
-  });
   dispatch({
     type: "SET_NANO_MODE",
     payload: true,

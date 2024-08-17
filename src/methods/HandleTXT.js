@@ -63,7 +63,19 @@ export async function HandleTOUCH(message, state, dispatch) {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
+      if (data.error) {
+        dispatch({
+          type: "ADD_TO_HISTORY",
+          payload: {
+            text: "ERROR: name is too long or too many files already exist!",
+            type: "error",
+            origin: "server",
+            path: GetPath(state),
+          },
+        });
+        return;
+      }
       HandleSetFiles(dispatch);
     })
     .catch((err) => {
@@ -220,7 +232,7 @@ export async function HandleCAT(message, state, dispatch) {
       });
     })
     .catch((err) => {
-      console.log(err);
+      // console.log(err);
       dispatch({
         type: "ADD_TO_HISTORY",
         payload: {

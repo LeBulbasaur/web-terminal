@@ -63,7 +63,19 @@ export async function HandleMKDIR(message, state, dispatch) {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
+      if (data.error) {
+        dispatch({
+          type: "ADD_TO_HISTORY",
+          payload: {
+            text: "ERROR: name is too long or too many directories already exist!",
+            type: "error",
+            origin: "server",
+            path: GetPath(state),
+          },
+        });
+        return;
+      }
       HandleSetFiles(dispatch);
     })
     .catch((err) => {
@@ -135,7 +147,21 @@ export async function HandleRMDIR(message, state, dispatch) {
       "Content-Type": "application/json",
     },
   })
-    .then((res) => {
+    .then((res) => res.json())
+    .then((data) => {
+      // console.log(data);
+      if (data.error) {
+        dispatch({
+          type: "ADD_TO_HISTORY",
+          payload: {
+            text: "Cannot remove selected object!",
+            type: "error",
+            origin: "server",
+            path: GetPath(state),
+          },
+        });
+        return;
+      }
       HandleSetFiles(dispatch);
     })
     .catch((err) => {
