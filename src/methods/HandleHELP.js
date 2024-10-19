@@ -40,7 +40,7 @@ export default function HandleHELP(message, state, dispatch) {
   dispatch({
     type: "ADD_TO_HISTORY",
     payload: {
-      text: `<span class='message__green'>cd</span> [path]\u00A0\u00A0\u00A0\u00A0- change working directory`,
+      text: "<span class='message__green'>clear</span>\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0- clear the terminal screen",
       type: "standard",
       origin: "server",
       path: GetPath(state),
@@ -58,7 +58,7 @@ export default function HandleHELP(message, state, dispatch) {
   dispatch({
     type: "ADD_TO_HISTORY",
     payload: {
-      text: "<span class='message__green'>clear</span>\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0- clear the terminal screen",
+      text: `<span class='message__green'>cd</span> [path]\u00A0\u00A0\u00A0\u00A0- change working directory`,
       type: "standard",
       origin: "server",
       path: GetPath(state),
