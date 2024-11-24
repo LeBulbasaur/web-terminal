@@ -73,7 +73,7 @@ function Message({ message }) {
               ⠀⠀⠀⠀⠀⢸⣿⣧⣿⣷⢦⡀⠀⠀⠀⢀⣀⡤⢚⣿⣿⣾⠋⣿⠀⠀⠀⠀{" "}
               <span className="message__white">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Japanese,
-                Russian (A1)
+                Russian
               </span>
               <br />
               ⠀⠀⠀⠀⠀⠸⠁⢿⡿⣿⣷⣌⡓⠒⠊⢉⣀⣴⣿⣿⡟⢿⠀⠈⠀⠀⠀⠀{" "}
@@ -176,7 +176,7 @@ function Message({ message }) {
             <br />
             <span className="message__white">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Japanese,
-              Russian (A1)
+              Russian
             </span>
             <br />
             <span className="message__yellow">Interest:</span>{" "}
