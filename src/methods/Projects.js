@@ -1,4 +1,11 @@
 import GetPath from "./GetPath";
+import CS from "../static/images/languages/cs.png";
+import HTML from "../static/images/languages/html.png";
+import JavaScript from "../static/images/languages/js.png";
+import Jupyter from "../static/images/languages/jupyter.png";
+import PC from "../static/images/languages/pc.png";
+import Python from "../static/images/languages/python.png";
+import Svelte from "../static/images/languages/svelte.png";
 
 export default async function Projects(message, state, dispatch) {
   dispatch({
@@ -47,7 +54,23 @@ export default async function Projects(message, state, dispatch) {
       await res.forEach((element) => {
         const projectElement = `
         <div class="project__card">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9MzSxtQWZNC-KECl9uaSQnskTwMIPvyy99w&s" alt="anime baba" />
+        <div class="project__card__image__container">
+          <img src='${
+            element.language == "C#"
+              ? CS
+              : element.language == "HTML"
+              ? HTML
+              : element.language == "JavaScript"
+              ? JavaScript
+              : element.language == "Jupyter Notebook"
+              ? Jupyter
+              : element.language == "Python"
+              ? Python
+              : element.language == "Svelte"
+              ? Svelte
+              : PC
+          }' alt='coding language' />
+          </div>
           <div class="project__card__data">
             <a href=${element.url} target="_blank">
               <h3>${
